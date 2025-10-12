@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import { Header } from "./header";
 
 export function Home(){
     return (
         <>
-        <Link to='/header'>HOME</Link>
+        <div className="w-full flex justify-center bg-[#FFFFFF]">
+            <Header/>
+        </div>
         </>
     )
 }
