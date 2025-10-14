@@ -6,6 +6,9 @@ export function Home(){
         <>
         <div className="w-full flex justify-center bg-[#FFFFFF]">
             <Header/>
+            <div>
+                
+            </div>
         </div>
         </>
     )
