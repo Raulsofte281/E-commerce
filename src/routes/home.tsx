@@ -5,6 +5,7 @@ import { Settings2 } from "lucide-react";
 
 /*Imagens */
 import banner from '../assets/banner.svg'
+import { Progress } from "@/components/ui/progress";
 
 export function Home(){
     return (
@@ -37,7 +38,7 @@ export function Home(){
                         <p className="hover:text-black hover:underline cursor-pointer">Dinning</p>
                         <p className="hover:text-black hover:underline cursor-pointer">Outdoor</p>
                     </div>
-
+                    <Progress className="bg-[#EAEAEA]" indicatorClassName="bg-green-500" value={33}/>
                 </div>
 
             </div>
