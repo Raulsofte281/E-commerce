@@ -27,7 +27,7 @@ export function Home(){
                     <Settings2 className="w-5"/>
                     <h1 className="font-semibold text-xl">Filter</h1>
                 </div>
-                <div className="flex">
+                <div className="flex items-center">
                     <div className="text-[#807E7E] font-semibold text-[14px] flex flex-col gap-y-3 ">
                         <h1 className="text-[#121212] font-semibold text-base mt-8">CATEGORIES</h1>
                         <p className="hover:text-black hover:underline cursor-pointer">All Rooms</p>
@@ -38,7 +38,9 @@ export function Home(){
                         <p className="hover:text-black hover:underline cursor-pointer">Dinning</p>
                         <p className="hover:text-black hover:underline cursor-pointer">Outdoor</p>
                     </div>
-                    <Progress className="bg-[#EAEAEA]" indicatorClassName="bg-green-500" value={33}/>
+                    <div className="w-[270px]">
+                        <Progress className="bg-[#EAEAEA] rotate-90" indicatorClassName="bg-[#6C7275] rounded-full" value={75}/>
+                    </div>
                 </div>
 
             </div>
