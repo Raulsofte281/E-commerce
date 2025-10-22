@@ -13,8 +13,10 @@ import grid from '@/assets/grid.svg';
 import layout4x4 from '@/assets/layout4x4.svg';
 import layout2x2 from '@/assets/layout2x2.svg';
 import layout2x2d from '@/assets/layout2x2d.svg';
+import sofa from '@/assets/sofa.svg';
 
 import { useState } from "react";
+import { Card } from "@/components/card";
 
 export function Home(){
     const [isChecked, setIsChecked] = useState(false);
@@ -71,18 +73,19 @@ export function Home(){
                     {/* Seção de produtos */}
                     <div className="flex justify-between items-center">
                         <div>
-                        <h1 className="font-semibold text-xl">Living Room</h1>
+                            <h1 className="font-semibold text-xl">Living Room</h1>
                         </div>
                         <div className="flex items-center justify-end mx-auto">
                             <p className="font-semibold text-base flex items-center">Sort by<ChevronDown className="size-5"/></p>
-                            <div className="flex gap-x-2">
-                                <img src={grid}/>
-                                <img src={layout4x4}/>
-                                <img src={layout2x2}/>
-                                <img src={layout2x2d}/>
+                            <div className="flex gap-x-2 border">
+                                <img src={grid} className="border-r p-3"/>
+                                <img src={layout4x4} className="border-r p-3"/>
+                                <img src={layout2x2} className="border-r p-3"/>
+                                <img src={layout2x2d} className="p-3"/>
                             </div> 
                         </div>   
                     </div>
+                    <Card image={sofa} novo/>
                 </div>
             </div>
 
