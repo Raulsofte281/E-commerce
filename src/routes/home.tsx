@@ -69,23 +69,24 @@ export function Home(){
                         </div>
                 </div>
 
-                <div className="font-[Inter]">
+                <div className="font-[Inter] w-full">
                     {/* Seção de produtos */}
-                    <div className="flex justify-between items-center">
+                    <div className="flex items-center">
                         <div>
                             <h1 className="font-semibold text-xl">Living Room</h1>
                         </div>
-                        <div className="flex items-center justify-end mx-auto">
-                            <p className="font-semibold text-base flex items-center">Sort by<ChevronDown className="size-5"/></p>
+                        <div className="flex items-center justify-end ml-auto">
+                                <p className="font-semibold text-base flex items-center justify-end gap-x-1 mx-10">Sort by<ChevronDown className="size-5"/></p>
                             <div className="flex gap-x-2 border">
                                 <img src={grid} className="border-r p-3"/>
                                 <img src={layout4x4} className="border-r p-3"/>
                                 <img src={layout2x2} className="border-r p-3"/>
                                 <img src={layout2x2d} className="p-3"/>
                             </div> 
+
                         </div>   
                     </div>
-                    <Card image={sofa} novo/>
+                    <Card image={sofa} novo off/>
                 </div>
             </div>
 
