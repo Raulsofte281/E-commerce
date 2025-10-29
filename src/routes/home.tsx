@@ -14,12 +14,27 @@ import layout4x4 from '@/assets/layout4x4.svg';
 import layout2x2 from '@/assets/layout2x2.svg';
 import layout2x2d from '@/assets/layout2x2d.svg';
 import sofa from '@/assets/sofa.svg';
+import Poltrona from '@/assets/Poltrona.svg';
+import abajur from '@/assets/abajur.svg';
+// não usadas ainda
+import cadeira from '@/assets/cadeira.svg';
+import balcao from '@/assets/balcao.svg';
+import lamp from '@/assets/lamp.svg';
+import travesseiro from '@/assets/travesseiro.svg';
+import cesta from '@/assets/cesta.svg';
+import luminaria from '@/assets/luminaria.svg';
 
 import { useState } from "react";
 import { Card } from "@/components/card";
+import { Button } from "@/components/ui/button";
 
 export function Home(){
-    const [isChecked, setIsChecked] = useState(false);
+    const [Theme, setTheme] = useState(false);
+
+    const handleClick = () => {
+        setTheme(!Theme);
+    }
+
 
     return (
         <>
@@ -69,13 +84,13 @@ export function Home(){
                         </div>
                 </div>
 
-                <div className="font-[Inter] w-full">
+                <div className="font-[Inter] w-full flex flex-col justify-center ">
                     {/* Seção de produtos */}
                     <div className="flex items-center">
                         <div>
                             <h1 className="font-semibold text-xl">Living Room</h1>
                         </div>
-                        <div className="flex items-center justify-end ml-auto">
+                        <div className="flex items-center justify-end ml-auto flex-wrap">
                                 <p className="font-semibold text-base flex items-center justify-end gap-x-1 mx-10">Sort by<ChevronDown className="size-5"/></p>
                             <div className="flex gap-x-2 border">
                                 <img src={grid} className="border-r p-3"/>
@@ -86,7 +101,20 @@ export function Home(){
 
                         </div>   
                     </div>
-                    <Card image={sofa} novo off/>
+                    <div className="flex flex-wrap gap-[30.5px] mt-3">
+                        <Card image={sofa} novo off name="Loveseat Sofa" price="$199.00" price2="$400.00"/>
+                        <Card image={Poltrona} novo off name="Luxury Sofa" price="$299.00" price2="$500.00"/>
+                        <Card image={abajur} novo off name="Table Lamp" price="$19.00"/>
+                        <Card image={balcao} novo off name="White Drawer unit" price="$89.99"/>
+                        <Card image={cadeira} novo off name="Black Tray table" price="$19.99"/>
+                        <Card image={lamp} novo off name="Lamp" price="$39.00"/>
+                        <Card image={travesseiro} novo off name="Light Beige Pillow" price="$3.99"/>
+                        <Card image={luminaria} novo off name="Table Lamp" price="$39.99"/>
+                        <Card image={cesta} novo off name="Bamboo Basket" price="$9.99"/>
+                    </div>
+                    <div className="flex flex-col justify-center items-center my-4 w-full">
+                        <Button variant="default" size="default" className="w-[163px] hover:bg-black border border-black hover:text-white duration-700 rounded-full font-medium">Show more</Button>
+                    </div>
                 </div>
             </div>
 
