@@ -1,12 +1,16 @@
-import { Header } from "./header";
 import { ChevronRight } from "lucide-react";
 import { Settings2 } from "lucide-react";
 import { Sun } from "lucide-react";
 import { Moon } from "lucide-react";
 import { ChevronDown } from "lucide-react";
 
+import { Header } from "../components/header";
 import { Progress } from "@/components/ui/progress";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Card } from "@/components/card";
+import { Button } from "@/components/ui/button";
+import { Footer } from "@/components/footer";
+
 
 /*Imagens */
 import grid from '@/assets/grid.svg';
@@ -25,8 +29,6 @@ import cesta from '@/assets/cesta.svg';
 import luminaria from '@/assets/luminaria.svg';
 
 import { useState } from "react";
-import { Card } from "@/components/card";
-import { Button } from "@/components/ui/button";
 
 export function Home(){
     const [Theme, setTheme] = useState(false);
@@ -103,6 +105,8 @@ export function Home(){
                     </div>
                     <div className="flex flex-wrap gap-[30.5px] mt-3">
                         <Card image={sofa} novo off name="Loveseat Sofa" price="$199.00" price2="$400.00"/>
+                        
+                        
                         <Card image={Poltrona} novo off name="Luxury Sofa" price="$299.00" price2="$500.00"/>
                         <Card image={abajur} novo off name="Table Lamp" price="$19.00"/>
                         <Card image={balcao} novo off name="White Drawer unit" price="$89.99"/>
@@ -117,6 +121,7 @@ export function Home(){
                     </div>
                 </div>
             </div>
+            <Footer/>
 
         </div>
         </>
