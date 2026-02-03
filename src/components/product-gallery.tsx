@@ -38,12 +38,7 @@ let image = [
       </div>
       {/* small image */}
       <div className="flex gap-3">
-       {/*  <img src={images} className="size-32 object-cover"/>
-            <img
-              src={images}
-              className="size-32 object-cover"
-            /> */}
-            {...image}
+          {...image}
       </div>
     </div>
   )

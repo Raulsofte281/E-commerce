@@ -46,10 +46,10 @@ export function ProductDetails({ onQuantityChange }: ProductDetailsProps) {
           </Badge>
         </div>
         <h1 className="mt-3 text-3xl font-bold tracking-tight text-balance">
-          Headphones Premium Wireless
+          Exclusive luxury armchairs
         </h1>
         <p className="mt-2 text-muted-foreground">
-          Fones de ouvido sem fio com cancelamento de ruído ativo
+          Poltronas de luxo exclusivas com acabamento premium
         </p>
       </div>
 
@@ -129,11 +129,11 @@ export function ProductDetails({ onQuantityChange }: ProductDetailsProps) {
       <div className="rounded-lg bg-muted/50 p-4">
         <h4 className="font-medium">Características</h4>
         <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-          <li>• Cancelamento de ruído ativo (ANC)</li>
-          <li>• Bateria de 30 horas</li>
-          <li>• Bluetooth 5.3</li>
-          <li>• Drivers de 40mm</li>
-          <li>• Conforto para uso prolongado</li>
+          <li>• Conforto ergonômico</li>
+          <li>• Assento de lã</li>
+          <li>• 80cm de comprimento</li>
+          <li>• 1m de altura</li>
+          <li>• 70cm de largura</li>
         </ul>
       </div>
     </div>

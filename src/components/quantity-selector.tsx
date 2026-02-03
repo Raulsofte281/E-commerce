@@ -21,7 +21,7 @@ export function QuantitySelector({
         size="icon"
         onClick={onDecrease}
         disabled={quantity <= 1}
-        className="h-10 w-10 bg-transparent"
+        className="h-10 w-10 bg-transparent hover:bg-gray-200 duration-500"
       >
         <Minus className="h-4 w-4" />
         <span className="sr-only">Diminuir quantidade</span>
@@ -31,7 +31,7 @@ export function QuantitySelector({
         variant="outline"
         size="icon"
         onClick={onIncrease}
-        className="h-10 w-10 bg-transparent"
+        className="h-10 w-10 bg-transparent hover:bg-gray-200 duration-500"
       >
         <Plus className="h-4 w-4" />
         <span className="sr-only">Aumentar quantidade</span>
