@@ -5,6 +5,7 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import { Header } from './components/header'
 import { Home } from './routes/home'
+import Product from './routes/product'
 
 
 export function App() {
@@ -15,6 +16,7 @@ export function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/header' element={<Header/>}/>
+        <Route path='/product' element={<Product/>}/>
         <Route path='*' element={<h1>NOT FOUND</h1>}/>
       </Routes>
     </>
