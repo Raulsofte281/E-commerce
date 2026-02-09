@@ -37,7 +37,8 @@ export function OrderSummary({ subtotal, shipping, quantity }: OrderSummaryProps
         <span>R$ {total.toFixed(2).replace('.', ',')}</span>
       </div>
 
-      <Button className="mt-6 w-full gap-2 hover:bg-green-400 border" size="lg">
+      <Button className="mt-6 w-full gap-2 bg-black text-white border-2 hover:bg-white hover:text-black hover:border- duration-500" 
+      size="lg">
         <ShoppingCart className="h-5 w-5" />
         Finalizar Compra
       </Button>
