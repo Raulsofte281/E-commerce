@@ -1,0 +1,34 @@
+import express from 'express';
+import { Pool } from 'pg';
+import dotenv from 'dotenv';
+import userRouter from './routes/user.route.js';
+import paymentRouter from './routes/payment-manager.route.js';
+
+dotenv.config();
+
+const app = express();
+app.use(express.json());
+
+export const db = new Pool({
+  connectionString: process.env.DATABASE_URL
+});
+
+app.use('/api', userRouter);
+app.use('/api', paymentRouter);
+
+app.get('/test-db', async (req, res) => {
+  try {
+    const result = await db.query('SELECT NOW()');
+    res.json({ 
+      message: 'Conectado ao Supabase!', 
+      time: result.rows[0].now 
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Erro ao conectar no banco' });
+  }
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
