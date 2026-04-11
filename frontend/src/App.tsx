@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Header } from './components/header'
 import { Home } from './routes/home'
 import Product from './routes/product'
+import { UsersList } from './components/users-list'
 
 
 export function App() {
@@ -17,6 +18,7 @@ export function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/header' element={<Header/>}/>
         <Route path='/product' element={<Product/>}/>
+        <Route path='/users' element={<UsersList/>}/>
         <Route path='*' element={<h1>NOT FOUND</h1>}/>
       </Routes>
     </>

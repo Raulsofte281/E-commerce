@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import {userService} from "../service/user.service.js"
+import {userService} from "../service/user.service.js";
 
  const userController = {   
     createUser: async (req: Request, res: Response): Promise<void> => {
@@ -76,6 +76,16 @@ import {userService} from "../service/user.service.js"
                 console.error('Erro no controller:', error);
                 res.status(500).send('Ocorreu um erro no servidor ao tentar deletar o usuario.');
             }
+        }
+    },
+
+    getAllUsers: async (req: Request, res: Response): Promise<void> => {
+        try {
+            const users = await userService.getAllUsers();
+            res.status(200).json(users);
+        } catch (error: any) {
+            console.error('Erro ao buscar usuarios:', error);
+            res.status(500).json({ error: 'Ocorreu um erro ao buscar usuarios.' });
         }
     }
 

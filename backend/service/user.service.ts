@@ -43,6 +43,16 @@ async function getUser(id: string): Promise<any> {
     
 }
 
+async function getAllUsers(): Promise<any> {
+    try{
+       const result = await db.query('SELECT * FROM public.user');
+       return result.rows
+    }catch(error){
+        console.error('erro ao buscar usuarios', error)
+        throw error;
+    }
+}
+
 async function updateUser(id: string, name: string, balance: string): Promise<any> {
     try{
         const result = await db.query('UPDATE public.user SET name = $1, balance = $3 WHERE id = $2', [name, parseInt(id), parseInt(balance)])
@@ -58,5 +68,6 @@ export const userService = {
     createUser: (name: string, id: string, balance: string) => createUser(name, id, balance),
     deleteUser: (id: string) => deleteUser(id),
     getUser: (id: string) => getUser(id),
+    getAllUsers: () => getAllUsers(),
     updateUser: (name: string, id: string, balance: string) => updateUser(name, id, balance)
     }

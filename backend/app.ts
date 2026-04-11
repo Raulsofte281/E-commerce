@@ -1,6 +1,7 @@
 import express from 'express';
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import userRouter from './routes/user.route.js';
 import paymentRouter from './routes/payment-manager.route.js';
 
@@ -8,6 +9,7 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 export const db = new Pool({
   connectionString: process.env.DATABASE_URL
