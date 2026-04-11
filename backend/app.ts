@@ -3,7 +3,7 @@ import { Pool } from 'pg';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import userRouter from './routes/user.route.js';
-import paymentRouter from './routes/payment-manager.route.js';
+import paymentRouter from './routes/productList.route.js';
 
 dotenv.config();
 
