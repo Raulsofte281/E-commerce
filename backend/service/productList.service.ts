@@ -1,9 +1,9 @@
 import { db } from "../app.js";
 
-async function getProduct(): Promise<string> {
+async function getProduct(): Promise<any> {
     try{
-        let product = await db.query("SELECT * FROM public.product WHERE id = $1");
-        return product.rows[0];
+        let product = await db.query("SELECT image, id FROM public.product");
+        return product.rows;
 
     } catch(error){
         console.error('erro ao buscar produto', error)

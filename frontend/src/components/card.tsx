@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { StarIcon } from "lucide-react";
 import { Button } from "./ui/button";
+import { useQueryImages, type Image } from "@/query/use-productImage";
 
 
-export function Card({image, novo, off, name, price, price2}: {image: string, novo?: boolean, off?: boolean, name?: string, price?: string, price2?: string}) {
+
+export function Card({imagem, novo, off, name, price, price2}: {imagem: string, novo?: boolean, off?: boolean, name?: string, price?: string, price2?: string}) {
 
     const [onhover, setOnhover] = useState(false);
   
@@ -13,7 +15,7 @@ export function Card({image, novo, off, name, price, price2}: {image: string, no
 
         <div className="bg-cover w-[262px] h-[349px] transition-all duration-700"
               style={{ 
-                backgroundImage: `url(${image})`
+                backgroundImage: `url(${imagem})`
               
               }} onMouseEnter={() => setOnhover(true)}
               onMouseLeave={() => setOnhover(false)}
@@ -32,6 +34,8 @@ export function Card({image, novo, off, name, price, price2}: {image: string, no
           </div>
           }
           </div>
+
+          
         <div className="flex mt-2 gap-1">
           <StarIcon className="fill-[#343839] text-[#343839] rounded size-4"/>
           <StarIcon className="fill-[#343839] text-[#343839] rounded size-4"/>

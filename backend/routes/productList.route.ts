@@ -4,4 +4,4 @@ import paymentManagerController from '../controller/ProductList.controller.js';
 
 paymentRouter.get("/payment", paymentManagerController.getProduct);
 
-export default paymentRouter;
+export default paymentRouter; 

@@ -10,6 +10,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Card } from "@/components/card";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
+import { useQueryImages, type Image } from "@/query/use-productImage";
+
 
 
 /*Imagens */
@@ -36,6 +38,7 @@ export function Home(){
     const handleClick = () => {
         setTheme(!Theme);
     }
+      const { data: image} = useQueryImages();
 
 
     return (
@@ -104,17 +107,12 @@ export function Home(){
                         </div>   
                     </div>
                     <div className="flex flex-wrap gap-[30.5px] mt-3">
-                        <Card image={sofa} novo off name="Loveseat Sofa" price="$199.00" price2="$400.00"/>
-                        
-                        
-                        <Card image={Poltrona} novo off name="Luxury Sofa" price="$299.00" price2="$500.00"/>
-                        <Card image={abajur} novo off name="Table Lamp" price="$19.00"/>
-                        <Card image={balcao} novo off name="White Drawer unit" price="$89.99"/>
-                        <Card image={cadeira} novo off name="Black Tray table" price="$19.99"/>
-                        <Card image={lamp} novo off name="Lamp" price="$39.00"/>
-                        <Card image={travesseiro} novo off name="Light Beige Pillow" price="$3.99"/>
-                        <Card image={luminaria} novo off name="Table Lamp" price="$39.99"/>
-                        <Card image={cesta} novo off name="Bamboo Basket" price="$9.99"/>
+                        {image?.map((image: Image) => (
+                            <Card
+                            key={image.id}
+                            imagem={image.image}
+                            novo off name="Loveseat Sofa" price="$199.00" price2="$400.00"/>
+                        ))}
                     </div>
                     <div className="flex flex-col justify-center items-center my-4 w-full">
                         <Button variant="default" size="default" className="w-[163px] hover:bg-black border border-black hover:text-white duration-700 rounded-full font-medium">Show more</Button>
